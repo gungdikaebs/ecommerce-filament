@@ -33,6 +33,9 @@ class ProductResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-squares-2x2';
 
+    protected static ?int $navigationSort = 4;
+
+
     public static function form(Form $form): Form
     {
         return $form
@@ -43,9 +46,9 @@ class ProductResource extends Resource
                             ->label('Name')
                             ->required()
                             ->live(onBlur: true)
-                            ->afterStateUpdated(function(string $operation, $state, Set $set){
-                                if($operation !== 'create'){
-                                  return;
+                            ->afterStateUpdated(function (string $operation, $state, Set $set) {
+                                if ($operation !== 'create') {
+                                    return;
                                 }
                                 $set('slug', Str::slug($state));
                             })
@@ -84,14 +87,14 @@ class ProductResource extends Resource
                     ]),
 
                     Section::make('Associations')->schema([
-                       Select::make('category_id')
+                        Select::make('category_id')
                             ->label('Category')
                             ->searchable()
                             ->preload()
                             ->relationship('category', 'name')
                             ->required(),
 
-                            Select::make('brand_id')
+                        Select::make('brand_id')
                             ->label('brand')
                             ->searchable()
                             ->preload()
@@ -169,10 +172,10 @@ class ProductResource extends Resource
             ])
             ->filters([
                 SelectFilter::make('category')
-                ->relationship('category', 'name'),
+                    ->relationship('category', 'name'),
 
                 SelectFilter::make('brand')
-                ->relationship('brand', 'name')
+                    ->relationship('brand', 'name')
             ])
             ->actions([
                 ActionGroup::make([
