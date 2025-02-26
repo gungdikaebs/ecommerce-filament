@@ -69,12 +69,12 @@ class ProductResource extends Resource
 
                     ])->columns(2),
                     Section::make('Images')->schema([
-                        FileUpload::make('image')
+                        FileUpload::make('images')
                             ->multiple()
                             ->directory('products')
                             ->reorderable()
                             ->maxFiles(5)
-                    ])
+                    ]),
                 ])->columnSpan(2),
 
                 Group::make()->schema([

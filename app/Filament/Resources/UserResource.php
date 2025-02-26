@@ -9,7 +9,7 @@ use Filament\Forms;
 use Filament\Resources\Pages\Page;
 use App\Filament\Resources\UserResource\Pages\CreateUser as CreateRecord;
 use App\Filament\Resources\UserResource\RelationManagers\OrdersRelationManager;
-use Filament\Actions\ActionGroup;
+use Filament\Tables\Actions\ActionGroup;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
