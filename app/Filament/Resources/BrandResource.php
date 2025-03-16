@@ -60,7 +60,7 @@ class BrandResource extends Resource
                         ->label('Image')
                         ->required()
                         ->image()
-                        ->directory('categories')
+                        ->directory('brands')
                         ->maxSize(8000),
 
                     Toggle::make('is_active')
