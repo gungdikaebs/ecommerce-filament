@@ -81,7 +81,10 @@
                         <span class="font-semibold">Grand Total</span>
                         <span class="font-semibold">Rp{{ number_format($grand_total, 0, ',', '.') }}</span>
                     </div>
-                    <button class="w-full px-4 py-2 mt-4 text-white bg-blue-500 rounded-lg">Checkout</button>
+
+                    <a href="/checkout"
+                        class="w-full px-4 py-2 mt-4 text-center text-white bg-blue-500 rounded-lg @if (count($cart_items) == 0) hidden @endif">Checkout</a>
+
                 </div>
             </div>
         </div>
